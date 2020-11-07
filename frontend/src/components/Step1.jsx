@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 
 const Step1 = ({history,resetRoom}) => {
     const step2handler=()=>{
-        
+        resetRoom()
         history.push('/step2');
 
     }
