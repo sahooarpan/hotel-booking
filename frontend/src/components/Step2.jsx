@@ -45,7 +45,7 @@ import { setAlert } from '../actions/alert'
 
         }
         getAddress() 
-        this.props.setAlert('Location Fetched','alert-success')       
+        this.props.setAlert('Location Fetched. Please enter the other fields manually.','alert-success')       
     }
 }
 
