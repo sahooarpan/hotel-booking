@@ -76,18 +76,18 @@ const baseStyle = {
 
     const handleSubmit=(e)=>{
       e.preventDefault();
-      const res ={...props.room.roomDetails,previewImage}
+      
       console.log(props.room.roomDetails,previewImage)
+      
     }
 
 
     
     useEffect(() =>{
-      console.log(props.room.roomDetails,"rds")
+      
       async function fetchData(){
         if(props.room.roomDetails===null){
           const res = await Axios.get('http://localhost:5000/');
-          console.log(res.data,"rd");
           props.setRoom(res.data)
         }
         
@@ -95,12 +95,9 @@ const baseStyle = {
       }
       fetchData()
       props.setAlert('Data fetched from CSV File :)','alert-success')
-    }, []);
+    }, [props]);
   
-  useEffect(()=>{
-    console.log("prds",props.room.roomDetails)
-  },[props.room.roomDetails])
-    useEffect(() => () => {
+   useEffect(() => () => {
         files.forEach(file => URL.revokeObjectURL(file.preview));
       }, [files]);
     
@@ -124,7 +121,6 @@ const baseStyle = {
         </div>
       )});
      const handleChange=(e)=>{
-        //console.log(e.target.value)
         setPreviewImage(e.target.value);
     }
   

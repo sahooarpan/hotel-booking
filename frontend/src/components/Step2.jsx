@@ -49,14 +49,9 @@ import { setAlert } from '../actions/alert'
     }
 }
 
-    componentDidUpdate(){
-        console.log(this.state);
-        console.log("2 props",this)
-    }
 
     handleChange=(e)=>{
         const {name,value} = e.target;
-        console.log(name,value)
         this.setState({
             [name]:value
         })
@@ -87,7 +82,7 @@ import { setAlert } from '../actions/alert'
         if(this.state.redirect){
             return <Redirect to={{pathname:"/step3",data:this.state}}/>
         }
-        console.log(this.isValid());
+        
     return (
         <React.Fragment>
             <Steps step2/>

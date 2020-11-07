@@ -11,7 +11,6 @@ app.get('/',async(req,res)=>{
 // fs npm package 
 let json = csvToJson.fieldDelimiter(',').getJsonFromCsv("data.csv") 
 for(let i=0; i<json.length;i++){
-    console.log(json[i]);
     results.push(json[i])
 }
 res.send(results[0])
@@ -19,5 +18,5 @@ res.send(results[0])
 
 })
 app.listen(5000,()=>{
-    console.log("Listening at 4000")
+    console.log("Listening at 5000")
 })
